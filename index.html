@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>FizzBuzz</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+  </head>
+  <body>
+
+        <h1>FizzBuzz</h1>
+        <div class="content">
+            <p id="number"></p>
+            <button id="start">Start FizzBuzz!</button>
+        </div>
+    
+
+    <script>
+
+        let number = document.querySelector('#number');
+        const start = document.querySelector('#start');
+        let result = '';
+
+       function fizzBuzz() {
+        let x = 1;
+
+        while (x <= 100) {
+            if(x%15===0) {
+                result += 'FizzBuzz ';
+            }
+            else if(x%3===0) {
+                result += 'Fizz ';
+            }
+            else if(x%5===0) {
+                result += 'Buzz ';
+            }
+            else {
+                result += (x + ' ');
+            }
+            x+=1;
+        }
+        return result;
+    };
+
+    start.addEventListener('click', function(){
+        fizzBuzz();
+        number.textContent = result;
+    });
+
+    </script>
+  </body>
+</html>
